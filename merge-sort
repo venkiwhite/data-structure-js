@@ -1,0 +1,20 @@
+ const mergeSort=(arrA,arrB) => {    //2 arrays
+	let singleSorted = [];       //variable declared as an arr to store the sorted arr
+	while (arrA.length && arrB.length) {   //loop n repeat a process to bring it to a single arr
+		if (arrA[0] < arrB[0]) {        //if one element in A is lesser than B
+			singleSorted.push(arrA[0]);     //push it into the sorted arr
+			arrA.shift();               //shift() removes the first element in line in the arr
+		} else {
+			singleSorted.push(arrB[0]);   //else push it to arrB
+			arrB.shift();                //remove it
+		}
+	}
+	return singleSorted.concat(arrA,arrB);   //concat takes multiple elements frm A n B
+
+}
+let arrA=[0,1,2,3,4,4,5];           
+let arrB=[1,2,3,5,7,8,10];
+console.log(mergeSort(arrA,arrB));
+
+
+
